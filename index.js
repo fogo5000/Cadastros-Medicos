@@ -9,4 +9,6 @@ app.use(bodyParser.json());
 
 app.use('/cadastro', controllers.cadastro);
 
+app.use('/busca', controllers.busca);
+
 app.listen(PORT, () => console.log(`Hey, listen! ${PORT}`));

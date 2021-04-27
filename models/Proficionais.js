@@ -26,6 +26,9 @@ const Proficionais = (sequelize, DataTypes) => {
           defaultValue: DataTypes.NOW,
           onUpdate: DataTypes.NOW,
         },
+        deletedAt:{
+          type: DataTypes.DATE,
+        }
       },
       {
         timestamps: true,

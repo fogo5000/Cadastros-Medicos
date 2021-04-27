@@ -12,6 +12,7 @@ module.exports = {
           especialidade: 'BUCO MAXILO',
           createdAt: new Date(),
           updatedAt: new Date(),
+          deletedAt: null,
         },
         {
           nome: 'Fernanda Reis Peixoto',
@@ -22,6 +23,7 @@ module.exports = {
           especialidade: 'CIRURIA DE CABEÇA E PESCOÇO',
           createdAt: new Date(),
           updatedAt: new Date(),
+          deletedAt: null,
         },
       ],
       { timestamps: true, paranoid: true },

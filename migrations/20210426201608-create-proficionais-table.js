@@ -11,7 +11,6 @@ module.exports = {
     nome: {
       type: Sequelize.STRING(120),
       allowNull: false,
-      unique: true,
     },
     CRM: {
       type: Sequelize.STRING,
@@ -19,12 +18,12 @@ module.exports = {
       unique: true,
     },
     telefoneFixo: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.BIGINT,
       allowNull: false,
       unique: true,
     },
     telefoneCelular: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.BIGINT,
       allowNull: false,
       unique: true,
     },
@@ -34,6 +33,20 @@ module.exports = {
     },
     especialidade: {
       type: Sequelize.STRING,
+      allowNull: false,
+      get() {
+        return this.getDataValue('especialidade').split(';')
+      },
+      set(espec) {
+        this.setDataValue('especialidade', espec.join(';'));
+      }
+    },
+    createdAt: {
+      type: Sequelize.DATE,
+      allowNull: false,
+    },
+    updatedAt: {
+      type: Sequelize.DATE,
       allowNull: false,
     },
   }),
